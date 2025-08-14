@@ -4,29 +4,31 @@ import { SignInForm } from "./SignInForm";
 import { SignOutButton } from "./SignOutButton";
 import { Toaster } from "sonner";
 import { TradingDashboard } from "./components/TradingDashboard";
-import { useRoutes } from "react-router-dom";
+import { useRoutes, BrowserRouter } from "react-router-dom";
 import routes from "tempo-routes";
 
 export default function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
-      <header className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm h-16 flex justify-between items-center border-b shadow-sm px-4">
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-sm">₹</span>
+    <BrowserRouter>
+      <div className="min-h-screen flex flex-col bg-gray-50">
+        <header className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm h-16 flex justify-between items-center border-b shadow-sm px-4">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">₹</span>
+            </div>
+            <h2 className="text-xl font-semibold text-gray-800">
+              NSE PineScript Backtester
+            </h2>
           </div>
-          <h2 className="text-xl font-semibold text-gray-800">
-            NSE PineScript Backtester
-          </h2>
-        </div>
-        <SignOutButton />
-      </header>
-      <main className="flex-1">
-        {import.meta.env.VITE_TEMPO && useRoutes(routes)}
-        <Content />
-      </main>
-      <Toaster />
-    </div>
+          <SignOutButton />
+        </header>
+        <main className="flex-1">
+          {import.meta.env.VITE_TEMPO && useRoutes(routes)}
+          <Content />
+        </main>
+        <Toaster />
+      </div>
+    </BrowserRouter>
   );
 }
 

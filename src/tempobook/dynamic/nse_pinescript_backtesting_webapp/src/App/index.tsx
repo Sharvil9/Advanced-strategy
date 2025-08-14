@@ -7,7 +7,7 @@ const args = {
 
 const TempoComponent = () => {
   const notifyStoryRenderedArgs = () => {
-    const notification = { filepath: '/home/peter/tempo-api/projects/ae/f6/aef628a8-3d5d-4ddf-ab19-9b069f20d899/nse_pinescript_backtesting_webapp/src/App.tsx', componentName: 'App', args };
+    const notification = { filepath: '/home/peter/tempo-api/projects/06/75/06752816-8662-427b-82f2-8953b408996f/nse_pinescript_backtesting_webapp/src/App.tsx', componentName: 'App', args };
     if (typeof window !== "undefined" && (window as any).notifyStoryRenderedArgs) {
       (window as any).notifyStoryRenderedArgs(notification);
     } else if (typeof window !== "undefined") {
